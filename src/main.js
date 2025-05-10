@@ -4,7 +4,7 @@ import router from "./router/index.js";
 import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import App from './App.vue';
-import {Button, Card, Dialog} from "primevue";
+import {Button, Card, Dialog, Drawer, Menu, Menubar, SelectButton, Toolbar} from "primevue";
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
@@ -17,8 +17,15 @@ app.use(router);
 app.use(PrimeVue, { theme: { preset: Aura }, ripple: true })
     .component('pv-button', Button)
     .component('pv-card', Card)
-    .component('pv-dialog', Dialog);
-    /****** ADD ALL COMPONENTS ******/
+    .component('pv-dialog', Dialog)
+    .component('pv-avatar', Avatar)
+    .component('pv-button', Button)
+    .component('pv-card', Card)
+    .component('pv-drawer', Drawer)
+    .component('pv-menu', Menu)
+    .component('pv-menubar', Menubar)
+    .component('pv-select-button', SelectButton)
+    .component('pv-toolbar', Toolbar);
 
 // i18n
 app.use(i18n);
