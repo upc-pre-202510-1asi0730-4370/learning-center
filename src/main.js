@@ -4,7 +4,7 @@ import router from "./router/index.js";
 import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import App from './App.vue';
-import {Button, Card} from "primevue";
+import {Button, Card, Dialog} from "primevue";
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
@@ -16,7 +16,8 @@ app.use(router);
 // PrimeVue
 app.use(PrimeVue, { theme: { preset: Aura }, ripple: true })
     .component('pv-button', Button)
-    .component('pv-card', Card);
+    .component('pv-card', Card)
+    .component('pv-dialog', Dialog);
     /****** ADD ALL COMPONENTS ******/
 
 // i18n
