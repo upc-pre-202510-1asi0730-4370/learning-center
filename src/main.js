@@ -4,7 +4,7 @@ import router from "./router/index.js";
 import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import App from './App.vue';
-import {Button, Card, Dialog, Drawer, Menu, Menubar, SelectButton, Toolbar} from "primevue";
+import {Avatar, Button, Card, Dialog, Drawer, Menu, Menubar, SelectButton, Toolbar} from "primevue";
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
