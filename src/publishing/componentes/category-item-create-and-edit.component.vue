@@ -11,7 +11,7 @@ import CreateAndEdit from "../../shared/components/create-and-edit.component.vue
  * UI elements and validation.
  */
 export default {
-  name: "category-item-create-and-edit-dialog",
+  name: "category-item-create-and-edit",
   components: {CreateAndEdit},
   props: {
     /**
