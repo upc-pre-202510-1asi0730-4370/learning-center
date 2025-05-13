@@ -1,6 +1,12 @@
 {
   "categories": [
-    { "id":  1, "name":  "CAT 1"},
-    { "id":  2, "name":  "CAT 2"}
+    {
+      "id": 1,
+      "name": "CAT 1"
+    },
+    {
+      "id": 2,
+      "name": "CAtego"
+    }
   ]
 }

@@ -36,7 +36,7 @@ export default {
         life: 3000,
       });
     },
-    findIndexById(id){
+    findIndexById(id) {
       return this.categories.findIndex(category => category.id === id);
     },
     onNewItem() {
@@ -53,7 +53,7 @@ export default {
       this.createAndEditDialogIsVisible = true;
     },
     onDeleteItem(item) {
-      this.category = { ...item };
+      this.category = {...item};
       this.deleteCategory();
     },
     deleteCategory() {
@@ -68,7 +68,7 @@ export default {
       this.selectedCategories = selectedItems;
       this.deleteSelectedItems();
     },
-    deleteSelectedItems(){
+    deleteSelectedItems() {
       this.selectedCategories.forEach((category) => {
         this.categoryService.delete(category.id).then(() => {
           this.categories = this.categories.filter((i) => i.id !== category.id);
@@ -95,24 +95,24 @@ export default {
       this.categoryService.update(this.category.id, this.category).then(response => {
         console.log('update category');
         let index = this.findIndexById(this.category.id);
-        this.categories[index] = new Category(response);
+        this.categories[index] = new Category(response.data);
         this.notifySuccessfulAction("Category updated successfully.");
       }).catch(error => console.log(error));
     },
     createCategory() {
       this.categoryService.create(this.category).then(response => {
-        let category = new Category(response);
+        let category = new Category(response.data);
         this.categories.push(category);
         this.notifySuccessfulAction("Category created successfully.");
       }).catch(error => console.log(error));
-    },
-    created() {
-      this.categoryService = new CategoryService();
-      this.categoryService.getAll().then(response => {
-        this.categories = response.data.map(category => new Category(category));
-        console.log(this.categories);
-      }).catch(error => console.log(error));
     }
+  },
+  created() {
+    this.categoryService = new CategoryService();
+    this.categoryService.getAll().then(response => {
+      this.categories = response.data.map(category => new Category(category));
+      console.log(this.categories);
+    }).catch(error => console.log(error));
   }
 }
 </script>

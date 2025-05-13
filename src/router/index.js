@@ -5,7 +5,6 @@
 
 import {createRouter, createWebHistory} from "vue-router";
 
-
 /**
  * @description Lazy-loaded component imports for route configuration
  * Using dynamic imports to enable code splitting and improve initial load performance
@@ -14,6 +13,7 @@ import {createRouter, createWebHistory} from "vue-router";
 const HomeComponent = () => import('../public/pages/home.component.vue');
 const AboutComponent = () => import('../public/pages/about.component.vue');
 const PageNotFoundComponent = () => import('../public/pages/page-not-found.component.vue');
+const CategoryManagementComponent = () => import('../publishing/pages/category-management.component.vue');
 
 /**
  * @type {import('vue-router').RouteRecordRaw[]}
@@ -27,7 +27,7 @@ const PageNotFoundComponent = () => import('../public/pages/page-not-found.compo
 const routes = [
     {   path: '/home',                  name: 'home',       component: HomeComponent,               meta: {title: 'Home'}},
     {   path: '/about',                 name: 'about',      component: AboutComponent,              meta: {title: 'About us'}},
-   // {   path: '/publishing/categories', name: 'categories', component: CategoryManagementComponent, meta: {title: 'Categories'}},
+    {   path: '/publishing/categories', name: 'categories', component: CategoryManagementComponent, meta: {title: 'Categories'}},
     {   path: '/',                      name: 'default',    redirect: {name: 'home'}},
     {   path: '/:pathMatch(.*)*',       name: 'not-found',  component: PageNotFoundComponent,       meta: {title: 'Page not found'}},
 ]
