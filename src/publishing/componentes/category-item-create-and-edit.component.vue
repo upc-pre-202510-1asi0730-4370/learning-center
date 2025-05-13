@@ -14,6 +14,8 @@ export default {
   name: "category-item-create-and-edit",
   components: {CreateAndEdit},
   props: {
+
+    edit: false,
     /**
      * @type {Category|null}
      * @description The category item being created or edited
@@ -67,7 +69,7 @@ export default {
 </script>
 
 <template>
-  <create-and-edit :entity="item" :visible="visible" entity-name="Category"
+  <create-and-edit :entity="item" :visible="visible" entity-name="Category" :edit="edit"
                    @cancel-action-requested="onCancelRequested"
                    @save-action-requested="onSaveRequested">
     <template #content>
